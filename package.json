@@ -1,6 +1,6 @@
 {
   "name": "site-scheme",
-  "version": "0.0.3",
+  "version": "0.0.0-development",
   "description": "Extracts color schemes from sites",
   "repository": "https://github.com/Jense5/site-scheme.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",
@@ -28,7 +28,9 @@
     "test:watch": "npm run test -- -w",
     "cover": "nyc npm run test",
     "cover:check": "nyc check-coverage --statements 80 --branches 80 --functions 80 --lines 80",
-    "cover:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "cover:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
   },
   "dependencies": {
     "bluebird": "^3.4.7",
@@ -36,6 +38,8 @@
     "color-blocks": "^0.2.0",
     "color-extract": "^0.2.0",
     "commander": "^2.9.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "fs-extra": "^2.0.0",
     "is-url": "^1.2.2",
     "sharp": "^0.17.2",
@@ -59,6 +63,10 @@
     "flow-bin": "^0.37.4",
     "mocha": "^3.2.0",
     "nyc": "^10.1.2",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "semantic-release": "^6.3.2"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
