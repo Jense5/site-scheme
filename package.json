@@ -37,6 +37,7 @@
     "commander": "^2.9.0",
     "fs-extra": "^2.0.0",
     "is-url": "^1.2.2",
+    "sharp": "^0.17.2",
     "web-capture": "^0.1.2",
     "winston": "^2.3.0"
   },
