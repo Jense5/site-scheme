@@ -39,7 +39,6 @@ export default (url: string, amount: number, output: ?string) =>
           }).catch(reject);
         } else { resolve(colors); }
       })
-      .catch(error => reject(error))
-      .finally(() => clearCache());
+      .catch(error => reject(error));
     } else { reject('Invalid url provided.'); }
-  });
+  }).finally(() => clearCache());
