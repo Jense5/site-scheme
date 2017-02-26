@@ -22,10 +22,7 @@ commander
 .option('-u, --url [url]', 'Url to capture')
 .option('-o, --output [output]', 'Output file to write to')
 .option('-n, --number [number]', 'Amount of colors to extract', parseInt)
-.option('-v, --verbose', 'Verbose mode')
 .parse(process.argv);
-
-if (commander.verbose) { winston.level = 'debug'; }
 
 if (!commander.url) {
   winston.error(chalk.red('No url provided. Please use the --url option.'));
@@ -39,7 +36,6 @@ if (commander.output) {
 }
 
 const number = commander.number || 5;
-
 extract(commander.url, number, outputFile).then((colors) => {
   winston.info(JSON.stringify(colors, null, 4));
 }).catch(error => winston.error(chalk.red(error)));
