@@ -3,6 +3,13 @@
 
 <p align="center"><b>Fetch color schemes from websites</b></p>
 
+<p align="center">
+  <img src="https://img.shields.io/travis/Jense5/site-scheme.svg?style=flat-square"/>
+  <img src="https://img.shields.io/npm/v/site-scheme.svg?style=flat-square"/>
+  <img src="https://img.shields.io/npm/l/site-scheme.svg?style=flat-square"/>
+  <img src="https://img.shields.io/codecov/c/github/Jense5/site-scheme.svg?style=flat-square"/>
+  <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square"/>
+</p>
 
 ```sh
 # Extract color schemes via terminal (optional output file).

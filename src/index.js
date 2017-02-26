@@ -22,7 +22,6 @@ const resizeCache = () => new Promise((resolve, reject) => {
   });
 });
 
-
 // Clears the cache.
 const clearCache = () => {
   fse.removeSync(CACHEA);
