@@ -1,64 +1,29 @@
 
 <h1 align="center">Site Scheme</h1>
 
-<p align="center">
-  <img src="https://image.flaticon.com/icons/svg/0/61.svg" width="150">
-</p>
+<p align="center"><b>Fetch color schemes from websites</b></p>
 
-<h3 align="center" style="font-family:monospace">DEVELOPERS ONLY</h3>
-
-### Default scripts
 
 ```sh
-$ npm install           # Install dependencies 
-$ npm run start         # Start the build cli 
-$ npm run build         # Build the source
-$ npm run build:watch   # Watch the build
-$ npm run test          # Run the tests
-$ npm run test:watch    # Watch the tests
-$ npm run cover         # Run the tests with coverage
-$ npm run cover:check   # Check if there is enough coverage
-$ npm run cover:report  # Push coverage report to codecov
-```
-
-### Setup Automated Releases
-
-```sh
-# Install the tools
-$ npm install -g semantic-release-cli
-$ npm install --save commitizen cz-conventional-changelog
-$ semantic-release-cli setup
-```
-
-```yml
-# Add script to Travis (replaces prepublish) and enable on the website
-# Also enable codecov for coverage
-branches:
-  only:
-    - master
-script:
-  - npm run cover
-  - npm run build
-after_success:
-  - npm run cover:report
+# Extract color schemes via terminal (optional output file).
+# See the images and result below.
+$ npm install -g site-scheme
+$ site-scheme --url 'http://toledo.kuleuven.be' --number 5 --output 'output.png'
+# Prints: [{"r":244,"g":245,"b":245,"a":255},{"r":29,"g":139,"b":177,"a":255},...]
 ```
 
 ```js
-// Update package.json with bins
-{
-  "scripts": { "commit": "git-cz" },
-  "czConfig": { "path": "node_modules/cz-conventional-changelog" }
-}
+// Use it via the module.
+import extractScheme from 'site-scheme';
+extractScheme('http://toledo.kuleuven.be', 5, 'output.png').then((colors) => {
+  winston.info(JSON.stringify(colors, null, 4));
+});
 ```
 
-```sh
-# You can now commit with automated releases
-$ git add .
-$ npm run commit
-```
+<p align="center" style="font-family:monospace"><b>- MIT -</b></p>
 
-<br />
-<p align="center">
-  <a href="https://js.org" target="_blank" title="JS.ORG | JavaScript Community">
-  <img src="https://logo.js.org/dark_horz.png" width="102" alt="JS.ORG Logo"/></a>
-</p>
+<h3 align="center">Input</h3>
+![](http://i.imgur.com/ozx7yjg.png)
+
+<h3 align="center">Output</h3>
+![](http://i.imgur.com/fgQ3xP8.png)
