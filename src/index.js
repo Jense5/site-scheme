@@ -3,6 +3,7 @@
 import path from 'path';
 import fse from 'fs-extra';
 import isUrl from 'is-url';
+import winston from 'winston';
 import capture from 'web-capture';
 import fetchScheme from 'color-extract';
 import { createColorPattern } from 'color-blocks';
@@ -13,7 +14,9 @@ export default (url: string, output: ?string) =>
   new Promise((resolve, reject) => {
     if (isUrl(url)) {
       capture(url, CACHE).then(() => {
+        winston.debug('Fetched site...');
         fetchScheme(CACHE, 5).then((colors) => {
+          winston.debug('Fetched scheme...');
           fse.removeSync(CACHE);
           if (output) {
             const aop = path.resolve(process.cwd(), output);

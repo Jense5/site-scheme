@@ -21,7 +21,10 @@ commander
 .usage('<options>')
 .option('-u, --url [url]', 'Url to capture')
 .option('-o, --output [output]', 'Output file to write to')
+.option('-v, --verbose', 'Verbose mode')
 .parse(process.argv);
+
+if (commander.verbose) { winston.level = 'debug'; }
 
 if (!commander.url) {
   winston.error(chalk.red('No url provided. Please use the --url option.'));
