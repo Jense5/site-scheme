@@ -23,7 +23,7 @@ extractScheme('http://toledo.kuleuven.be', 5, 'output.png').then((colors) => {
 <p align="center" style="font-family:monospace"><b>- MIT -</b></p>
 
 <h3 align="center">Input</h3>
-![](http://i.imgur.com/ozx7yjg.png)
+<img src="http://i.imgur.com/ozx7yjg.png">
 
 <h3 align="center">Output</h3>
-![](http://i.imgur.com/fgQ3xP8.png)
+<img src="http://i.imgur.com/fgQ3xP8.png">
