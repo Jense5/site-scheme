@@ -12,6 +12,7 @@ import { createColorPattern } from 'color-blocks';
 const CACHEA = path.resolve(__dirname, '5fba6621adbd97fec1d933874bf49e5a.png');
 const CACHEB = path.resolve(__dirname, '5fba6621adbd97fec1d933874bf49e5b.png');
 
+// Resizes the cache files.@
 const resizeCache = () => new Promise((resolve, reject) => {
   sharp(CACHEA).resize(100).png().toFile(CACHEB, (error, info) => {
     if (error) { reject(error); }
@@ -19,11 +20,21 @@ const resizeCache = () => new Promise((resolve, reject) => {
   });
 });
 
+// Clears the cache.
 const clearCache = () => {
   fse.removeSync(CACHEA);
   fse.removeSync(CACHEB);
 };
 
+/**
+ * Fetches the given amount of colors from the given url. This can be used to determine the color
+ * scheme that is used on the given website. An optional output location can be given, which will
+ * be the location of the output file (if undefined, no file will be created).
+ * @param {string} url The url of the website to check
+ * @param {number} amount The amount of colors to fetch
+ * @param {?string} output The output location for the theme file
+ * @returns {Promise<Color>} A promise with the color scheme
+ */
 export default (url: string, amount: number, output: ?string) =>
   new Promise((resolve, reject) => {
     if (isUrl(url)) {
