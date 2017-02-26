@@ -1,6 +1,6 @@
 {
   "name": "site-scheme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extracts color schemes from sites",
   "repository": "https://github.com/Jense5/site-scheme.git",
   "author": "Jensen Bernard <jensenbernard5@gmail.com> (twitter.com/Jense5_)",

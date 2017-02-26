@@ -37,5 +37,5 @@ if (commander.output) {
 
 const number = commander.number || 5;
 extract(commander.url, number, outputFile).then((colors) => {
-  winston.info(JSON.stringify(colors));
+  winston.info(JSON.stringify(colors, null, 4));
 }).catch(error => winston.error(chalk.red(error)));
