@@ -1,9 +1,9 @@
 // @flow
 
 import path from 'path';
+import Jimp from 'jimp';
 import fse from 'fs-extra';
 import isUrl from 'is-url';
-import sharp from 'sharp';
 import Promise from 'bluebird';
 import capture from 'web-capture';
 import { getProminentColors } from 'color-extract';
@@ -14,11 +14,14 @@ const CACHEB = path.resolve(__dirname, '5fba6621adbd97fec1d933874bf49e5b.png');
 
 // Resizes the cache files.@
 const resizeCache = () => new Promise((resolve, reject) => {
-  sharp(CACHEA).resize(100).png().toFile(CACHEB, (error, info) => {
-    if (error) { reject(error); }
-    if (!error) { resolve(info); }
+  Jimp.read(CACHEA).then((img) => {
+    img.resize(100, 100).write(CACHEB, (err) => {
+      if (err) { reject(err); }
+      resolve();
+    });
   });
 });
+
 
 // Clears the cache.
 const clearCache = () => {
