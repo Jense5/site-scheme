@@ -7,8 +7,9 @@ describe('Default tests', () => {
   it('should extract colors with output', (done) => {
     const output = path.resolve(__dirname, 'output.png');
     extract('https://toledo.kuleuven.be', 5, output).then((colors) => {
-      expect(colors).to.be.an('array');
-      expect(colors).to.have.length(5);
+      expect(colors.colors).to.be.an('array');
+      expect(colors.colors).to.have.length(4);
+      expect(!!colors.top).to.equal(true);
       expect(fse.existsSync(output)).to.equal(true);
       fse.removeSync(output);
       done();
@@ -17,8 +18,9 @@ describe('Default tests', () => {
   it('should extract colors without output', (done) => {
     const output = path.resolve(__dirname, 'output.png');
     extract('https://toledo.kuleuven.be', 5).then((colors) => {
-      expect(colors).to.be.an('array');
-      expect(colors).to.have.length(5);
+      expect(colors.colors).to.be.an('array');
+      expect(colors.colors).to.have.length(4);
+      expect(!!colors.top).to.equal(true);
       expect(fse.existsSync(output)).to.equal(false);
       done();
     }).catch(done);

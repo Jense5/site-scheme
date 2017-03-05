@@ -13,10 +13,10 @@
 
 ```sh
 # Extract color schemes via terminal (optional output file).
-# See the images and result below.
+# See the images and result below. The top is the color at the top of the site.
 $ npm install -g site-scheme
 $ site-scheme --url 'http://toledo.kuleuven.be' --number 5 --output 'output.png'
-# Prints: [{"r":244,"g":245,"b":245,"a":255},{"r":29,"g":139,"b":177,"a":255},...]
+# Prints: {top:{"r":244,"g":245,"b":245,"a":255},colors:[{"r":29,"g":139,"b":177,"a":255},...]
 ```
 
 ```js

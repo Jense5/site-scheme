@@ -42,12 +42,12 @@ export default (url: string, amount: number, output: ?string) =>
     if (isUrl(url)) {
       capture(url, CACHEA)
       .then(() => resizeCache())
-      .then(() => getProminentColors(CACHEB, amount))
+      .then(() => getProminentColors(CACHEB, amount, true))
       .then((colors) => {
         if (output) {
           const aop = path.resolve(process.cwd(), output);
           const outputPath = path.extname(aop) === '.png' ? aop : path.resolve(aop, 'output.png');
-          createColorPattern(50, colors, outputPath).then(() => {
+          createColorPattern(50, [colors.top, ...colors.colors], outputPath).then(() => {
             resolve(colors);
           }).catch(reject);
         } else { resolve(colors); }
