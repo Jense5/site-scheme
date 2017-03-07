@@ -975,13 +975,14 @@ codecov@^1.0.1:
     request ">=2.42.0"
     urlgrey ">=0.4.0"
 
-color-blocks@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/color-blocks/-/color-blocks-0.2.0.tgz#75a7696e25c6315e638874c431cd02233f0205a6"
+color-blocks@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/color-blocks/-/color-blocks-1.0.0.tgz#9b6ea57445237d44fb79ea9e8f328d126261c092"
   dependencies:
     commitizen "^2.9.6"
     cz-conventional-changelog "^2.0.0"
     jimp "^0.2.27"
+    onecolor "^3.0.4"
 
 color-difference@^0.3.4:
   version "0.3.4"
@@ -990,9 +991,9 @@ color-difference@^0.3.4:
     cli "^0.4.5"
     color-model "^0.2.0"
 
-color-extract@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/color-extract/-/color-extract-0.3.2.tgz#af3b729d45b6cc26e1ee7db8bd54d20a90678b11"
+color-extract@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/color-extract/-/color-extract-1.0.0.tgz#19d5dcc66c1d35c592762721b80e5c328b265803"
   dependencies:
     chalk "^1.1.3"
     clusterfck "^0.6.0"
